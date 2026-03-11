@@ -60,7 +60,7 @@ export function VideoDropzone({
       className={`
         relative rounded-2xl border-2 border-dashed transition-all duration-200
         ${canAdd && !disabled
-          ? "border-cyan-300 bg-gradient-to-br from-cyan-50/90 to-teal-50/80 hover:border-teal-400 hover:shadow-xl hover:shadow-cyan-900/10"
+          ? "border-slate-300 bg-slate-50/90 hover:border-slate-400 hover:shadow-sm"
           : "border-slate-200 bg-white/60"}
         ${disabled ? "pointer-events-none opacity-70" : ""}
       `}
@@ -74,17 +74,17 @@ export function VideoDropzone({
         className="absolute inset-0 cursor-pointer opacity-0"
       />
       <div className="flex flex-col items-center justify-center gap-4 py-12 px-8 text-center">
-        <div className="rounded-2xl bg-gradient-to-br from-cyan-400 to-teal-500 p-5 text-white shadow-lg shadow-cyan-900/20">
+        <div className="rounded-2xl bg-slate-200 p-5 text-slate-600 shadow-sm">
           <UploadVideoIcon className="h-14 w-14" />
         </div>
         <div className="space-y-1">
-          <p className="text-base font-semibold text-teal-900">
+          <p className="text-base font-semibold text-slate-700">
             Seret video ke sini atau klik untuk memilih
           </p>
-          <p className="text-sm text-teal-700/80">
+          <p className="text-sm text-slate-600">
             Format .mp4 atau .mov · Maks. {formatFileSize(MAX_FILE_SIZE)} per video
           </p>
-          <p className="text-xs font-bold text-cyan-600">
+          <p className="text-xs font-bold text-slate-500">
             {currentCount} / {MAX_VIDEOS} video
           </p>
         </div>

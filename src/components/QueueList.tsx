@@ -61,10 +61,10 @@ export function QueueList({
             key={item.id}
             className={`
               flex flex-wrap items-center gap-3 rounded-xl border-2 px-4 py-3 text-sm transition-shadow
-              ${isCurrent ? "border-violet-400 bg-gradient-to-r from-violet-50 to-fuchsia-50 shadow-md shadow-violet-900/10" : "border-cyan-100 bg-white hover:border-cyan-200"}
+              ${isCurrent ? "border-slate-400 bg-slate-50 shadow-sm" : "border-slate-200 bg-white hover:border-slate-300"}
             `}
           >
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-100 to-teal-100 text-cyan-600">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-slate-600">
               <VideoFileIcon className="h-5 w-5" />
             </div>
             <button
@@ -80,10 +80,10 @@ export function QueueList({
             <span
               className={`
                 shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold
-                ${isAnalyzing ? "bg-amber-200 text-amber-900" : ""}
-                ${isDone ? "bg-emerald-200 text-emerald-900" : ""}
-                ${isFailed ? "bg-rose-200 text-rose-900" : ""}
-                ${item.status === "pending" ? "bg-violet-100 text-violet-700" : ""}
+                ${isAnalyzing ? "bg-slate-200 text-slate-700" : ""}
+                ${isDone ? "bg-slate-300 text-slate-800" : ""}
+                ${isFailed ? "bg-slate-200 text-slate-700" : ""}
+                ${item.status === "pending" ? "bg-slate-100 text-slate-600" : ""}
                 ${item.status === "cancelled" ? "bg-slate-200 text-slate-600" : ""}
               `}
             >
@@ -103,7 +103,7 @@ export function QueueList({
                 <button
                   type="button"
                   onClick={() => onRetry(item.id)}
-                  className="rounded-lg bg-amber-100 px-2.5 py-1.5 text-xs font-medium text-amber-800 hover:bg-amber-200"
+                  className="rounded-lg bg-slate-100 px-2.5 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-200"
                 >
                   Coba lagi
                 </button>
@@ -112,7 +112,7 @@ export function QueueList({
                 <button
                   type="button"
                   onClick={() => onReanalyze(item.id)}
-                  className="rounded-lg bg-violet-100 px-2.5 py-1.5 text-xs font-medium text-violet-800 hover:bg-violet-200"
+                  className="rounded-lg bg-slate-100 px-2.5 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-200"
                 >
                   Analisis ulang
                 </button>
@@ -120,7 +120,7 @@ export function QueueList({
               <button
                 type="button"
                 onClick={() => onRemove(item.id)}
-                className="rounded-lg bg-rose-50 px-2.5 py-1.5 text-xs font-medium text-rose-700 hover:bg-rose-100"
+                className="rounded-lg bg-slate-100 px-2.5 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-200"
               >
                 Hapus
               </button>

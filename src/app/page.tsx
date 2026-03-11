@@ -209,7 +209,7 @@ export default function Home() {
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl text-gradient-hero">
               Video Creative Analyzer
             </h1>
-            <p className="mt-2 text-violet-800/90 font-medium">
+            <p className="mt-2 text-slate-600 font-medium">
               Unggah video iklan, dapatkan analisis Hook, Visual, Audio, dan rekomendasi caption.
             </p>
           </div>
@@ -227,9 +227,9 @@ export default function Home() {
         </section>
 
         {queue.length > 0 && (
-          <section className="mb-8 rounded-2xl border-2 border-cyan-200/80 bg-gradient-to-br from-cyan-50/90 to-violet-50/80 p-6 shadow-xl shadow-cyan-900/5">
-            <h2 className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-cyan-800">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-cyan-400/30 text-cyan-700">
+          <section className="mb-8 rounded-2xl border-2 border-slate-200 bg-white/80 p-6 shadow-sm">
+            <h2 className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-slate-700">
+              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-600">
                 <QueueListIcon className="h-4 w-4" />
               </span>
               Antrean Video
@@ -254,23 +254,23 @@ export default function Home() {
               </button>
               {isProcessing && (
                 <div className="min-w-[220px] flex-1 space-y-2">
-                  <div className="flex justify-between text-xs font-medium text-violet-700">
+                  <div className="flex justify-between text-xs font-medium text-slate-600">
                     <span>Video saat ini</span>
                     <span>{currentProgress}%</span>
                   </div>
-                  <div className="h-2.5 w-full overflow-hidden rounded-full bg-violet-100">
+                  <div className="h-2.5 w-full overflow-hidden rounded-full bg-slate-200">
                     <div
                       className="h-full rounded-full bg-progress transition-all duration-300"
                       style={{ width: `${currentProgress}%` }}
                     />
                   </div>
-                  <div className="flex justify-between text-xs font-medium text-cyan-700">
+                  <div className="flex justify-between text-xs font-medium text-slate-600">
                     <span>Total antrean</span>
                     <span>{doneCount}/{totalCount} selesai</span>
                   </div>
-                  <div className="h-2 w-full overflow-hidden rounded-full bg-cyan-100">
+                  <div className="h-2 w-full overflow-hidden rounded-full bg-slate-200">
                     <div
-                      className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-teal-500 transition-all duration-300"
+                      className="h-full rounded-full bg-slate-400 transition-all duration-300"
                       style={{ width: `${totalCount ? (doneCount / totalCount) * 100 : 0}%` }}
                     />
                   </div>
@@ -282,10 +282,10 @@ export default function Home() {
 
         {selected && (
           <section className="space-y-6">
-            <h2 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-violet-700">
+            <h2 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-slate-700">
               Pemutar & Hasil
             </h2>
-            <div className="mx-auto max-h-[380px] w-full max-w-2xl overflow-hidden rounded-2xl border-2 border-violet-200/60 bg-slate-900 shadow-xl shadow-violet-900/10">
+            <div className="mx-auto max-h-[380px] w-full max-w-2xl overflow-hidden rounded-2xl border-2 border-slate-200 bg-slate-900 shadow-sm">
               <video
                 ref={(el) => {
                   videoRef.current = el;
@@ -306,12 +306,12 @@ export default function Home() {
               />
             )}
             {selected.status === "analyzing" && (
-              <p className="rounded-xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 px-4 py-3 text-sm font-medium text-amber-800">
+              <p className="rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-sm font-medium text-slate-700">
                 Menganalisis video ini...
               </p>
             )}
             {selected.status === "failed" && selected.error && (
-              <p className="rounded-xl bg-rose-50 border border-rose-200 px-4 py-3 text-sm font-medium text-rose-700">
+              <p className="rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-sm font-medium text-slate-700">
                 {selected.error}
               </p>
             )}
